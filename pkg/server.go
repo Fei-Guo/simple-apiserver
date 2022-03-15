@@ -101,7 +101,7 @@ func (s *Store) List(options map[string][]string) ([]*api.Application, error) {
 		if last.DeleteTimeStamp != nil {
 			continue
 		}
-		if matchSource && !inArray(last.Title, sources) {
+		if matchSource && !inArray(last.Source, sources) {
 			continue
 		}
 		if matchCompany && !inArray(last.Company, companies) {
