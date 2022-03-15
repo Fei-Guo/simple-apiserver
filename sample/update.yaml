@@ -1,0 +1,28 @@
+---
+title: app1
+version: v0.0.1
+maintainers:
+- name: Sccot
+  email: sccot@gmail.com
+company: random1
+website: https://app1.com
+source: https://github.com/random1/app1
+license: apache-2.0
+description: |
+  ### blob of markdown
+  More markdown
+---
+title: app2
+version: v0.0.1 
+maintainers:
+- name: Bob
+  email: bob@gmail.com
+- name: Jack
+  email: Jack@gmail.com
+company: random2
+website: https://app2.com
+source: https://github.com/random2/repo
+license: apache-2.2
+description: |
+  ### blob of markdown
+  More markdown1
