@@ -108,7 +108,7 @@ $ curl -X GET -H "Content-Type:text/x-yaml" http://localhost:8082/api/applicatio
   resourceVersion: "1"
 ```
 
-- Get application `app2` with full revision history. We can see that one maintainer has been changed from `Bob` to `Jack`.
+- Get application `app2` with full revision history. We can see that one maintainer has been changed from `Alice` to `Jack`.
 
 ```shell
 $ curl -X GET -H "Content-Type:text/x-yaml" http://localhost:8082/api/applications/app2\?dump
@@ -257,3 +257,13 @@ $ curl -X GET -H "Content-Type:text/x-yaml" http://localhost:8082/api/applicatio
   deleteTimeStamp: 2022-03-15T13:08:03.851351-07:00
   resourceVersion: "2"
 ```
+
+## What is next?
+
+To make this simple API server more realistic, we can enhance it from the following aspects:
+
+- **Authentication**: We can leverage bearer token or PKI to establish the account system so that clients that access the apiserver can be identified.
+- **Multi-tenancy**: We can use namespaces to group the metadata for different tenants.
+- **Authorization**: On top of the namespace mechanism, the apiserver administrator can build policies to specify the permissions for different users to manage the metadata.
+- **High availability**: If the in-memory datastore is still used, we can use a common distributed in-memory datastore such as Redis to tolerate node failures.
+- **Persistent storage**: If persistent storage is desired, we can use a common distributed KV store such as etcd to persist the metadata which natively supports high availability.
