@@ -218,6 +218,7 @@ func GetApplications(res http.ResponseWriter, req *http.Request) {
 	}
 	ret, _ := appDB.List(query)
 	res.WriteHeader(http.StatusOK)
+	res.Write([]byte(fmt.Sprintf("%d applications are found", len(ret))))
 	err := yaml.NewEncoder(res).Encode(ret)
 	if err != nil {
 		http.Error(res, err.Error(), http.StatusInternalServerError)
