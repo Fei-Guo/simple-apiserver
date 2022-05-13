@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "guofeitest-9803"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "guofeitest-9803"
+  template:
+    metadata:
+      labels:
+        app: "guofeitest-9803"
+    spec:
+      containers:
+        - name: "guofeitest-9803"
+          image: "guofeitest.azurecr.io/guofeitest"
+          ports:
+          - containerPort: 8082
